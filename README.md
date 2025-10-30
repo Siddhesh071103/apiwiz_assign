@@ -1,4 +1,4 @@
-🧩 JSON Tree Visualizer
+# JSON Tree Visualizer
 
 A React-based web application that visualizes JSON data as an interactive, zoomable tree graph using React Flow.
 Users can enter JSON, generate a node-link visualization, zoom in/out, toggle between light and dark themes, and even download the tree as an image.
@@ -39,26 +39,6 @@ If you started the app with Vite or Create React App, also ensure React and Reac
 
 npm install react react-dom
 
-📁 Folder Structure
-json-tree-visualizer/
-│
-├── src/
-│   ├── components/
-│   │   ├── Download/
-│   │   │   ├── download.js
-│   │   │   └── downbutton.css
-│   │
-│   ├── utils/
-│   │   └── jsonToFlow.js     # Converts JSON into React Flow nodes & edges
-│   │
-│   ├── App.js
-│   ├── App.css
-│   ├── index.js
-│   └── ...
-│
-├── package.json
-└── README.md
-
 ⚙️ How It Works
 
 Enter or paste a valid JSON object in the left panel.
@@ -87,13 +67,6 @@ The DownloadButton component uses dom-to-image to export the .flow-canvas div as
 
 The layout and responsiveness are handled in App.css, ensuring the flow graph centers properly even on mobile screens.
 
-🎨 Example Preview
-User
-├── id: 1
-├── name: "John Doe"
-└── address
-     ├── city: "New York"
-     └── country: "USA"
 
 🧭 Future Enhancements
 
@@ -105,12 +78,8 @@ User
 
 🔎 Node search and highlighting.
 
-💻 Run Locally
-# Clone the repository
-git clone https://github.com/yourusername/json-tree-visualizer.git
-
 # Navigate into the project folder
-cd json-tree-visualizer
+cd apiwiz_json
 
 # Install dependencies
 npm install
