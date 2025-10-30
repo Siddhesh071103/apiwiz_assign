@@ -87,6 +87,9 @@ npm install
 # Start the app
 npm run dev   # (or npm start if using CRA)
 
+# Paste this link in browser (deployed)
+https://js0ntreev.netlify.app/
+
 
 Then open 👉 http://localhost:5173/
  (Vite) or http://localhost:3000/
