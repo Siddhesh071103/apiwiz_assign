@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+🧩 JSON Tree Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application that visualizes JSON data as an interactive, zoomable tree graph using React Flow.
+Users can enter JSON, generate a node-link visualization, zoom in/out, toggle between light and dark themes, and even download the tree as an image.
 
-## Available Scripts
+🚀 Features
 
-In the project directory, you can run:
+📄 JSON Input Panel — Paste or type any valid JSON structure.
 
-### `npm start`
+🌳 Dynamic Tree Visualization — Displays JSON as a connected node graph using React Flow.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🖼 Download Option — Export the generated tree as a PNG image.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🌗 Light / Dark Theme Toggle — Seamlessly switch between modes.
 
-### `npm test`
+🔍 Zoom Controls — Zoom in/out and fit view for better exploration.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📱 Responsive Design — Works well on mobile and desktop screens.
 
-### `npm run build`
+🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React.js (via Vite or CRA)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Flow — for rendering the interactive tree graph.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+dom-to-image — for capturing and downloading the graph as an image.
 
-### `npm run eject`
+CSS (Tailwind / Custom) — for layout and responsive styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+📦 Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make sure you have Node.js ≥ 16 installed, then install the following packages:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install reactflow
+npm install dom-to-image
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+If you started the app with Vite or Create React App, also ensure React and ReactDOM are present:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install react react-dom
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📁 Folder Structure
+json-tree-visualizer/
+│
+├── src/
+│   ├── components/
+│   │   ├── Download/
+│   │   │   ├── download.js
+│   │   │   └── downbutton.css
+│   │
+│   ├── utils/
+│   │   └── jsonToFlow.js     # Converts JSON into React Flow nodes & edges
+│   │
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── ...
+│
+├── package.json
+└── README.md
 
-### Code Splitting
+⚙️ How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Enter or paste a valid JSON object in the left panel.
 
-### Analyzing the Bundle Size
+Click the Generate Tree button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The right panel displays a React Flow-based JSON tree visualization.
 
-### Making a Progressive Web App
+Use the Zoom In / Zoom Out / Fit View buttons for navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Click Download Tree to save the visualization as a PNG image.
 
-### Advanced Configuration
+🧠 Key Implementation Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The JSON is parsed and recursively converted into React Flow nodes and edges in jsonToFlow.js.
 
-### Deployment
+Each node represents:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Objects → Blue nodes
 
-### `npm run build` fails to minify
+Arrays → Green nodes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Primitives (string/number/boolean) → Orange nodes
+
+The DownloadButton component uses dom-to-image to export the .flow-canvas div as an image, excluding the download button itself.
+
+The layout and responsiveness are handled in App.css, ensuring the flow graph centers properly even on mobile screens.
+
+🎨 Example Preview
+User
+├── id: 1
+├── name: "John Doe"
+└── address
+     ├── city: "New York"
+     └── country: "USA"
+
+🧭 Future Enhancements
+
+🌐 Support for large JSON files with performance optimization.
+
+💾 Upload JSON file feature.
+
+🧱 Drag & rearrange nodes for custom layouts.
+
+🔎 Node search and highlighting.
+
+💻 Run Locally
+# Clone the repository
+git clone https://github.com/yourusername/json-tree-visualizer.git
+
+# Navigate into the project folder
+cd json-tree-visualizer
+
+# Install dependencies
+npm install
+
+# Start the app
+npm run dev   # (or npm start if using CRA)
+
+
+Then open 👉 http://localhost:5173/
+ (Vite) or http://localhost:3000/
+ (CRA) in your browser.
